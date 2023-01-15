@@ -1,6 +1,6 @@
 from django.urls import path
-from divulgar import views
+from . import views
 
 urlpatterns = [
-    # path('divulgar/', views.divulgar, name="divulgar"),
+    path('novo_pet/', views.novo_pet, name="novo_pet"),
 ]
