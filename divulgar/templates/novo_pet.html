@@ -29,7 +29,8 @@
                                 <hr>
                             </div>
                             <div class="body-box">
-                                <form action="{% url 'novo_pet' %}" method="POST" enctype='multipart/form-data'>{% csrf_token %}
+                                <form action="{% url 'novo_pet' %}" method="POST" enctype='multipart/form-data'>
+                                    {% csrf_token %}
                                     {% if messages %}
                                         <br>
                                         {% for message in messages %}
@@ -40,10 +41,10 @@
                                     {% endif %}
                                     <input type="file" name="foto" class="form-control">
                                     <br>
-                                    <span>Nome:<span>
+                                    <span>Nome:</span>
                                     <input type="text" class="form-control" name="nome" placeholder="Digite o nome do pet...">
                                     <br>
-                                    <span>Descrição:<span>
+                                    <span>Descrição:</span>
                                     <textarea class="form-control" name="descricao" placeholder="Descrição..."></textarea>
                                     <br>
 
@@ -70,7 +71,7 @@
 
                                     </select>
                                     <br>
-                                    </span>Raça:</span>
+                                    <span>Raça:</span>
 
                                     <select name="raca" class="form-select">
                                         {% for raca in racas %}

@@ -56,3 +56,16 @@ def seus_pets(request):
     if request.method == "GET":
         pets = Pet.objects.filter(usuario=request.user)
         return render(request, 'seus_pets.html', {'pets':pets})
+
+
+def remover_pet(request, id):
+    pet = Pet.objects.get(id=id)
+
+    if not pet.usuario == request.user:
+        messages.add_message(request, constants.ERROR, 'Você não tem permissão para fazer isso!')
+        return redirect('/divulgar/seus_pets')
+
+    pet.delete()
+
+    messages.add_message(request, constants.SUCCESS, 'Pet removido com sucesso!')
+    return redirect('/divulgar/seus_pets')
