@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro</title>
+    <title>Quero Divulgar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{% static 'usuarios/css/cadastro.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/novo_pet.css' %}" rel="stylesheet">
@@ -29,7 +29,7 @@
                                 <hr>
                             </div>
                             <div class="body-box">
-                                <form action="" method="POST" enctype='multipart/form-data'>{% csrf_token %}
+                                <form action="{% url 'novo_pet' %}" method="POST" enctype='multipart/form-data'>{% csrf_token %}
                                     {% if messages %}
                                         <br>
                                         {% for message in messages %}
@@ -64,19 +64,18 @@
                                     <br>
                                     <span>Tags:</span>
                                     <select name="tags" multiple class="form-select">
-                                        {% for tag in tags%}
+                                        {% for tag in tags %}
                                             <option value="{{tag.id}}">{{tag}}</option>
                                         {% endfor %}
+
                                     </select>
                                     <br>
                                     </span>Raça:</span>
-                                    <select name="tags" multiple class="form-select">
-                                        {% for raca in racas%}
-                                            <option value="{{raca.id}}">{{raca}}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <select name="raca" class="form-select">
 
+                                    <select name="raca" class="form-select">
+                                        {% for raca in racas %}
+                                        <option value="{{raca.id}}">{{raca}}</option>
+                                        {% endfor %}
                                     </select>
 
                                     <input type="submit" value="ENVIAR" class="btn-custom-primary">
