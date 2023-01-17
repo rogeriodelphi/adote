@@ -1,9 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Tag, Raca
-
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
 from .models import Pet, Tag, Raca
 from django.contrib import messages
 from django.contrib.messages import constants
@@ -60,12 +56,9 @@ def seus_pets(request):
 
 def remover_pet(request, id):
     pet = Pet.objects.get(id=id)
-
     if not pet.usuario == request.user:
         messages.add_message(request, constants.ERROR, 'Você não tem permissão para fazer isso!')
         return redirect('/divulgar/seus_pets')
-
     pet.delete()
-
     messages.add_message(request, constants.SUCCESS, 'Pet removido com sucesso!')
     return redirect('/divulgar/seus_pets')
