@@ -32,6 +32,7 @@
                             <hr>
                              <table class="tabela" cellpadding="20">
                                 <tr>
+                                    <th>Id</th>
                                     <th>Foto</th>
                                     <th>Nome</th>
                                     <th>Raça</th>
@@ -40,15 +41,12 @@
                                 </tr>
                                     {% for pet in pets %}
                                         <tr class="tabela-linha">
+                                            <td>{{ pet.id }}</td>
                                             <td width="20%" class="imagem__pet">
                                                 <img width="40%" src="{{pet.foto.url}}">
                                             </td>
-                                            <td>
-                                                {{pet.nome}}
-                                            </td>
-                                            <td>
-                                                {{pet.raca}}
-                                            </td>
+                                            <td>{{pet.nome}}</td>
+                                            <td>{{pet.raca}}</td>
                                             <td>
                                                 {% if pet.status == "P" %}
                                                     <span class="badge text-bg-success">Para adoção</span>

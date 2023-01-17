@@ -50,6 +50,7 @@
                             </form>
                             <table class="tabela" cellpadding="20">
                                 <tr>
+                                    <th>Id</th>
                                     <th>Foto</th>
                                     <th>Nome</th>
                                     <th>Raça</th>
@@ -58,6 +59,7 @@
                                 </tr>
                                 {% for pet in pets%}
                                     <tr class="tabela-linha">
+                                        <td>{{ pet.id }}</td>
                                         <td width="20%">
                                             <a href="#"><img width="40%" src="{{pet.foto.url}}"></a>
 {#                                            <a href="{% url 'ver_pet' pet.id %}"><img width="40%" src="{{pet.foto.url}}"></a>#}

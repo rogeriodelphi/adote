@@ -42,7 +42,7 @@ class Pet(models.Model):
     telefone = models.CharField('Telefone', max_length=14)
     tags = models.ManyToManyField(Tag, verbose_name='Tag')
     raca = models.ForeignKey(Raca, on_delete=models.DO_NOTHING, verbose_name='Raça')
-    status = models.CharField('Status', max_length=1, choices=choices_status)
+    status = models.CharField('Status', max_length=1, choices=choices_status, default='P')
 
     def __str__(self):
         return self.nome
