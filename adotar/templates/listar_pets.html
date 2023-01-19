@@ -39,7 +39,9 @@
                                     <div class="col-md-4">
                                         <select class="form-select" name="raca">
                                             {% for raca in racas %}
-                                                <option {% if raca_filter.id == raca.id %} selected {% endif %} value="{{raca.id}}"> {{raca}} </option>
+                                                <option {% if raca_filter.id == raca.id %}
+                                                    selected {% endif %} value="{{raca.id}}"> {{raca}}
+                                                </option>
                                             {% endfor %}
                                         </select>
                                     </div>
