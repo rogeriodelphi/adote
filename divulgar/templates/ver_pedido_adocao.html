@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="pt-BR">
     <head>
@@ -12,16 +13,12 @@
     <link href="{% static 'adotar/css/listar_pets.css' %}" rel="stylesheet">
     </head>
     <body>
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 bg-side-plataforma sidebar">
                     <h2>ADO.TE</h2>
                     <hr>
-
-
                 </div>
-
                 <div style="padding:60px" class="col-md">
                     <div class="row">
                         {% if messages %}
@@ -43,7 +40,6 @@
                                         <h1 class="card-title">{{pedido.usuario.username}}</h1>
                                         <span class="span-bold2">Telefone:</span>
                                         <p>{{pedido.pet.telefone}}</p>
-
                                         <span class="span-bold2">Cidade:</span>
                                         <p>{{pedido.pet.cidade}}</p>
                                         <a href="{% url 'processa_pedido_adocao' pedido.id %}?status=A" class="btn btn-success btn-lg">Aprovar</a>
@@ -52,24 +48,10 @@
                                 </div>
                             </div>
                         {% endfor %}
-
-
-
-
-
                     </div>
                 </div>
-
             </div>
-
-
-
-
         </div>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

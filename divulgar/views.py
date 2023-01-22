@@ -89,9 +89,6 @@ def api_adocoes_por_raca(request):
     for raca in racas:
         adocoes = PedidoAdocao.objects.filter(pet__raca=raca).filter(status="AP").count()
         qtd_adocoes.append(adocoes)
-
     racas = [raca.raca for raca in racas]
-    data = {'qtd_adocoes': qtd_adocoes,
-            'labels': racas}
-
+    data = {'qtd_adocoes': qtd_adocoes, 'labels': racas}
     return JsonResponse(data)

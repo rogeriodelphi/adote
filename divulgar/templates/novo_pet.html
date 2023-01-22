@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="pt-BR">
     <head>
@@ -8,19 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{% static 'usuarios/css/cadastro.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/novo_pet.css' %}" rel="stylesheet">
-
     </head>
     <body>
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 bg-side sidebar">
                     <h2>ADO.TE</h2>
                     <hr>
-
-
                 </div>
-
                 <div class="col-md">
                     <div class="wrapper">
                         <div class="box">
@@ -47,13 +43,11 @@
                                     <span>Descrição:</span>
                                     <textarea class="form-control" name="descricao" placeholder="Descrição..."></textarea>
                                     <br>
-
                                     <div class="row">
                                         <div class="col-md">
                                             <span>Estado:</span>
                                             <input type="text" placeholder="Digite o estado do pet..." name="estado" class="form-control">
                                         </div>
-
                                         <div class="col-md">
                                             <span>Cidade:</span>
                                             <input type="text" placeholder="Digite a cidade do pet..." name="cidade" class="form-control">
@@ -68,32 +62,22 @@
                                         {% for tag in tags %}
                                             <option value="{{tag.id}}">{{tag}}</option>
                                         {% endfor %}
-
                                     </select>
                                     <br>
                                     <span>Raça:</span>
-
                                     <select name="raca" class="form-select">
                                         {% for raca in racas %}
                                         <option value="{{raca.id}}">{{raca}}</option>
                                         {% endfor %}
                                     </select>
-
                                     <input type="submit" value="ENVIAR" class="btn-custom-primary">
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
