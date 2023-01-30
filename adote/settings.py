@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'usuarios',
     'divulgar',
     'adotar',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
 ]
 
